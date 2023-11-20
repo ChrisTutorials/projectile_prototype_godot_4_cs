@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://5nupi5jhluqy"]
+
+[ext_resource type="PackedScene" uid="uid://dt6nrushe76pl" path="res://world.tscn" id="1_im3a1"]
+[ext_resource type="PackedScene" uid="uid://cbgplwknymf6r" path="res://ui/score_label.tscn" id="2_e3cha"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ejhiu"]
+font_size = 32
+
+[node name="Gameplay" type="Node"]
+
+[node name="World" parent="." instance=ExtResource("1_im3a1")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" parent="CanvasLayer" instance=ExtResource("2_e3cha")]
+text = "SCORE: "
+label_settings = SubResource("LabelSettings_ejhiu")

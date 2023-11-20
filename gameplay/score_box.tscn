@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://cmilucuvjf2n3"]
+
+[ext_resource type="Script" path="res://gameplay/ScoreBox.cs" id="1_dwarx"]
+[ext_resource type="Resource" uid="uid://0t5k5prv3im2" path="res://data/score.tres" id="2_psxfx"]
+
+[sub_resource type="Gradient" id="Gradient_h1wre"]
+offsets = PackedFloat32Array(0.558912, 0.607251, 0.649547)
+colors = PackedColorArray(0, 0.533333, 0.721569, 0, 0.219608, 0.603922, 0.647059, 1, 0.188235, 0.705882, 0.654902, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_iuhob"]
+gradient = SubResource("Gradient_h1wre")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.525641, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yh7ii"]
+radius = 53.0377
+
+[sub_resource type="Animation" id="Animation_4c328"]
+resource_name = "patrol"
+length = 1.2
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Position:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-200, 0), Vector2(-200, 100), Vector2(0, 100), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_n5hk3"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pcrj1"]
+_data = {
+"RESET": SubResource("Animation_n5hk3"),
+"patrol": SubResource("Animation_4c328")
+}
+
+[node name="ScoreBox" type="Node2D" node_paths=PackedStringArray("ScoreArea")]
+script = ExtResource("1_dwarx")
+ScoreArea = NodePath("Position/Area2D")
+Score = ExtResource("2_psxfx")
+
+[node name="Position" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Position"]
+offset_right = 128.0
+offset_bottom = 128.0
+texture = SubResource("GradientTexture2D_iuhob")
+
+[node name="Area2D" type="Area2D" parent="Position"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Position/Area2D"]
+position = Vector2(67, 64)
+shape = SubResource("CircleShape2D_yh7ii")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pcrj1")
+}
+autoplay = "patrol"

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbgplwknymf6r"]
+
+[ext_resource type="Script" path="res://ui/ScoreLabel.cs" id="1_rr2a2"]
+[ext_resource type="Resource" uid="uid://0t5k5prv3im2" path="res://data/score.tres" id="2_nvaka"]
+
+[node name="ScoreLabel" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("1_rr2a2")
+Score = ExtResource("2_nvaka")

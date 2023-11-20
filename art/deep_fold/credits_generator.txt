@@ -1,0 +1,7 @@
+Space Background Generator by Deep Fold
+
+https://deep-fold.itch.io/space-background-generator
+
+Source on Github: https://github.com/Deep-Fold/PixelSpace
+
+Credit is appreciated, but not required.

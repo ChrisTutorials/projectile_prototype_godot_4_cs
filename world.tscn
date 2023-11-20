@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://dt6nrushe76pl"]
+
+[ext_resource type="Texture2D" uid="uid://c2e8p3nckn0y3" path="res://art/deep_fold/space_background.png" id="1_edekb"]
+[ext_resource type="PackedScene" uid="uid://crpv5avmpgxtq" path="res://objects/projectile_launcher.tscn" id="1_uwrnd"]
+[ext_resource type="Texture2D" uid="uid://c1yw76wcsmcag" path="res://icon.svg" id="2_e16ra"]
+[ext_resource type="PackedScene" uid="uid://cmilucuvjf2n3" path="res://gameplay/score_box.tscn" id="4_mbavj"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mptn8"]
+texture = ExtResource("2_e16ra")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/modulate = Color(0.721569, 0.45098, 0.345098, 1)
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSet" id="TileSet_orp6p"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_mptn8")
+
+[node name="World" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -158.0
+offset_top = -1064.0
+offset_right = 1717.0
+offset_bottom = 41.0
+texture = ExtResource("1_edekb")
+
+[node name="ProjectileLauncher" parent="." instance=ExtResource("1_uwrnd")]
+position = Vector2(148, -342)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.2, 1.2)
+limit_left = 0
+limit_bottom = 0
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_orp6p")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131061, 0, 0)
+
+[node name="Projectiles" type="Node2D" parent="." groups=["ProjectilesParent"]]
+
+[node name="ScoreBox" parent="." instance=ExtResource("4_mbavj")]
+position = Vector2(983, -798)
+scale = Vector2(1.8, 1.98462)

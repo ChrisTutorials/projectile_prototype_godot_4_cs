@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://crpv5avmpgxtq"]
+
+[ext_resource type="Script" path="res://objects/ProjectileLauncher.cs" id="1_c6nue"]
+[ext_resource type="Texture2D" uid="uid://c1yw76wcsmcag" path="res://icon.svg" id="1_fnldl"]
+[ext_resource type="PackedScene" uid="uid://b1huj7cmlmwpr" path="res://objects/projectile.tscn" id="2_xbshs"]
+[ext_resource type="Script" path="res://objects/PowerLabel.cs" id="4_utesg"]
+
+[node name="ProjectileLauncher" type="Node2D" node_paths=PackedStringArray("Aiming", "Sprite")]
+script = ExtResource("1_c6nue")
+Aiming = NodePath("Aiming")
+ProjectileScene = ExtResource("2_xbshs")
+Sprite = NodePath("Aiming/Sprite2D")
+
+[node name="Aiming" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Aiming"]
+rotation = 1.5708
+texture = ExtResource("1_fnldl")
+
+[node name="PowerLabel" type="Label" parent="." node_paths=PackedStringArray("Launcher")]
+offset_left = -53.0
+offset_top = -100.0
+offset_right = 26.0
+offset_bottom = -77.0
+text = "POWER: "
+script = ExtResource("4_utesg")
+Launcher = NodePath("..")
