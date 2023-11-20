@@ -2,7 +2,7 @@
 Project is end result of tutorial at https://youtu.be/uOXIZf7QFHg
 
 The background needed to be removed from the tutorial since sharing in asset packs is not allowed 
-(To be on the safe side since I'm releasing the code with MIT License) - LINK AT THE BOTTOM
+(To be on the safe side since I'm releasing the code with MIT License) - Generate your own at https://deep-fold.itch.io/space-background-generator
 
 Project / Tutorial was made using Godot 4.2 rc1 Mono Version https://godotengine.org/article/release-candidate-godot-4-2-rc-1/
 To get the debugger to work from this project, you will need to put your Godot exe path into launcher.json's program entry
