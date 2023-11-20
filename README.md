@@ -7,3 +7,9 @@ where it says "program": "C:/Godot/Godot4.exe" change the path (on the right) to
 
 My dotnet version was 8.0.10. .NET 6.0 and 7.0 should work too. I'd probably get 7.0 since 8.0 is a release candidate version.
 Link to 7.0 https://dotnet.microsoft.com/en-us/download/dotnet/7.0
+
+Relevant Links
+https://github.com/godotengine/godot-csharp-vscode/issues/59#issuecomment-1790064015
+https://dotnet.microsoft.com/en-us/download/dotnet/7.0
+https://godotengine.org/article/release-candidate-godot-4-2-rc-1/
+https://deep-fold.itch.io/space-background-generator
