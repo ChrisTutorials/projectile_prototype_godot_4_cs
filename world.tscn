@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://dt6nrushe76pl"]
+[gd_scene load_steps=6 format=3 uid="uid://dt6nrushe76pl"]
 
-[ext_resource type="Texture2D" uid="uid://c2e8p3nckn0y3" path="res://art/deep_fold/space_background.png" id="1_edekb"]
 [ext_resource type="PackedScene" uid="uid://crpv5avmpgxtq" path="res://objects/projectile_launcher.tscn" id="1_uwrnd"]
 [ext_resource type="Texture2D" uid="uid://c1yw76wcsmcag" path="res://icon.svg" id="2_e16ra"]
 [ext_resource type="PackedScene" uid="uid://cmilucuvjf2n3" path="res://gameplay/score_box.tscn" id="4_mbavj"]
@@ -21,12 +20,9 @@ sources/0 = SubResource("TileSetAtlasSource_mptn8")
 
 [node name="World" type="Node2D"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -158.0
-offset_top = -1064.0
-offset_right = 1717.0
-offset_bottom = 41.0
-texture = ExtResource("1_edekb")
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="ProjectileLauncher" parent="." instance=ExtResource("1_uwrnd")]
 position = Vector2(148, -342)
